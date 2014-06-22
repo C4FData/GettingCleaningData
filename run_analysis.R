@@ -62,7 +62,7 @@ AllDataMeanSTD <-cbind(All_Data_Descriptions[,c(564,2)],AllDataSTD,AllDataMean)
 library("reshape2", lib.loc=NULL)
 
 # melt the data frame with the standard deviations and means to have a skinny set
-skinnyData <- melt(AllDataMeanSTD,id=c("ActivityDescription","SubjectNumber"))
+skinnyData <- melt(AllDataMeanSTD,id=c("ActivityDescription","SubjectNumber"),na.rm=TRUE)
 
 # cast the skinnyData back into a data frame with the calculated averages for each
 # combination of subject and activity
